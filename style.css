@@ -70,6 +70,38 @@ li {
     margin-left: 20px; /* Increased margin */
 }
 
+
+/* Add counter for numbering tasks */
+ul {
+    list-style-type: none;
+    padding: 0;
+    counter-reset: task-counter; /* Initialize the counter */
+}
+
+li {
+    padding: 15px; /* Increased padding */
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between; /* Align items to the left and right */
+    align-items: center;
+    counter-increment: task-counter; /* Increment the counter for each list item */
+}
+
+li::before {
+    content: counter(task-counter) ". "; /* Add counter with period */
+}
+
+.delete-button {
+    background-color: blue !important;
+    color: white;
+    border: none;
+    border-radius: 6px; /* Increased border radius */
+    padding: 6px 12px; /* Increased padding */
+    cursor: pointer;
+    margin-left: 90px; /* Increased margin */
+}
+
 .delete-button:hover {
-    background-color: #da190b;
+    background-color: purple;
 }
